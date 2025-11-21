@@ -1,0 +1,23 @@
+services:
+  # Service Web pour l'application React
+  - type: web
+    name: sora-2-prompt-architect
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - fromGroup: production-variables
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+  # Configuration pour l'environnement de production
+  - type: envVarGroup
+    name: production-variables
+    envVars:
+      - key: GEMINI_API_KEY
+        generateValue: false
+        sync: false
