@@ -1,0 +1,5 @@
+{
+  "name": "Sora 2 Prompt Architect",
+  "description": "A professional tool powered by Gemini 2.5 to engineer high-fidelity, cinematically accurate prompts for OpenAI's Sora 2 video model.",
+  "requestFramePermissions": []
+}
